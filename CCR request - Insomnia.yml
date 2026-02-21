@@ -1,0 +1,720 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: CCR with Security
+meta:
+  id: wrk_61c4eb76cb8b459aa99e5c87a0c38b98
+  created: 1770600698704
+  modified: 1770600698704
+  description: ""
+collection:
+  - url: http://localhost:8080/auth/login
+    name: Login
+    meta:
+      id: req_d971be4848bd442fa56c0a99e28d2aa3
+      created: 1770600701349
+      modified: 1770937282299
+      isPrivate: false
+      description: ""
+      sortKey: -1770600701349
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"login" : "biafaleta",
+        	"password" : "senha123" 
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children
+    name: "[CHILD] - Cadastrar Crianca"
+    meta:
+      id: req_a334cd82e9d54b08a5fc2ac81569580e
+      created: 1770781244862
+      modified: 1770917562878
+      isPrivate: false
+      description: ""
+      sortKey: -1770781244862
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"name" : "Rafael Oliveira",
+        	"responsibleName" : "Débora e Thiago",
+          "responsibleContact" : "71992927121",
+        	"allergies" : "N/A"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkyNDc0M30.-prrD4JUgKWb_vaE_AQwVnroJSnRqmbk599pddOCDIw
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/75e871fb-b4dc-484d-b23b-8dcef38d6843
+    name: "[CHILD] - Atualizar Crianca"
+    meta:
+      id: req_809c94ad85b4436182088913e3304a3b
+      created: 1770782111273
+      modified: 1770848858689
+      isPrivate: false
+      description: ""
+      sortKey: -1770691079431.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"name" : "Luara Bey",
+        	"responsibleName" : "Rafael e Maressa",
+          "responsibleContact" : "71992927121",
+        	"allergies" : "N/A"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzcwODU2MDUyfQ.-wJQwucxjv7vlviTSOeDLhNeLYFr-YFAoC-_oGVpGow
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/7ef0af61-b8d3-4c50-9bf2-da9681969892
+    name: "[CHILD] - Deletar Crianca"
+    meta:
+      id: req_d8ccdedb9c7945e29484e77514098855
+      created: 1770782255875
+      modified: 1770785176887
+      isPrivate: false
+      description: ""
+      sortKey: -1770645996716.25
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Imx1Y2FzbHVjYXMiLCJleHAiOjE3NzA3ODk0Mjh9.fEYKmtZEJ8WyPZbiXUUOU-BQK8Db4A1GAT7scFHkBpI
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children
+    name: "[CHILD] - Listar Todas"
+    meta:
+      id: req_c8f04852a94544d19920496685866ba6
+      created: 1770783493916
+      modified: 1770931866823
+      isPrivate: false
+      description: ""
+      sortKey: -1770783493916
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/users
+    name: "[USERS] - Cadastrar"
+    meta:
+      id: req_1f8569ea14704b9c99f17eb791b61b5c
+      created: 1770784755446
+      modified: 1770869636811
+      isPrivate: false
+      description: ""
+      sortKey: -1770784755446
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name" : "Lia",
+        	"login" : "lia",
+        	"password" : "senha123",
+        	"role" : "USER"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      disabled: false
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDg3NjcxNH0.dI1F7PryCOspDpIotSxY3kycOKcgh07Ki1cdp947OHI
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/users
+    name: "[USERS] - Listar Todos"
+    meta:
+      id: req_c0402932f70c4e96ad0c618cf0448706
+      created: 1770784791330
+      modified: 1770931881422
+      isPrivate: false
+      description: ""
+      sortKey: -1770784124681
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/users/df2762ab-479d-4c4a-bc06-5a0c0ca9365a
+    name: "[USERS] - Buscar Usuário"
+    meta:
+      id: req_0d0a5317a7a04d0795a3ff6ec4f4f324
+      created: 1770784801330
+      modified: 1770931876079
+      isPrivate: false
+      description: ""
+      sortKey: -1770783809298.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/users/
+    name: "[USERS] - Atualizar Usuário"
+    meta:
+      id: req_72e28ab212e34fd99e91e17a10d59bd2
+      created: 1770784811576
+      modified: 1770785036625
+      isPrivate: false
+      description: ""
+      sortKey: -1770783651607.25
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name" : "Lucas", 
+        	"login" : "lucaslucas",
+        	"password" : "senha123",
+        	"role" : 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/users/
+    name: "[USERS] - Deletar Usuário"
+    meta:
+      id: req_a96d135a551548a39b7860b691e666a7
+      created: 1770784820442
+      modified: 1770785065242
+      isPrivate: false
+      description: ""
+      sortKey: -1770783572761.625
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/sundays
+    name: "[SUNDAY] - Marcar Disponibilidade"
+    meta:
+      id: req_7a4ce18abc664aecb2ca12d61e3877f2
+      created: 1770868608191
+      modified: 1770914808647
+      isPrivate: false
+      description: ""
+      sortKey: -1770868608191
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"date" : "15/02/2026",
+        	"shift" : "MORNING"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkyMjAwMX0.ab1ABgmgqJAENgg6tlHcsv9K2IXv2lMRf4fOtXBOVt0
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/sundays?start=01/02/2026&end=29/02/2026
+    name: "[SUNDAY] - Verificar Disponibilidades"
+    meta:
+      id: req_9f6380658a7b48648b2b763a44e3c138
+      created: 1770869267941
+      modified: 1770931915677
+      isPrivate: false
+      description: ""
+      sortKey: -1770826681818.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/sundays?date=15/02/2026&shift=MORNING&userId=df2762ab-479d-4c4a-bc06-5a0c0ca9365a
+    name: "[SUNDAY] - Excluir Disponibilidade (ADMIN)"
+    meta:
+      id: req_06ccf6c3c79b422bb9fcc6c9e3334269
+      created: 1770869391109
+      modified: 1770869655215
+      isPrivate: false
+      description: ""
+      sortKey: -1770805718632.25
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImxpYSIsImV4cCI6MTc3MDg3Njg0Nn0.UgLC8-DDOsOMtrio8f3EIDoeteVv2ilZBQeUvBrjU-4
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/sundays?date=15/02/2026&shift=MORNING
+    name: "[SUNDAY] - Excluir Disponibilidade"
+    meta:
+      id: req_af3b12a8d3534f13b11dec845361f9bc
+      created: 1770869397400
+      modified: 1770869522237
+      isPrivate: false
+      description: ""
+      sortKey: -1770816200225.375
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDg3NjcxNH0.dI1F7PryCOspDpIotSxY3kycOKcgh07Ki1cdp947OHI
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/3c22239d-32bc-46da-a481-73cebc1d1eb9/attendance
+    name: "[ATTENDANCE] - Dar presença na Crianca"
+    meta:
+      id: req_4870d59cbf3a422ab729b60c6c132bee
+      created: 1770915889175
+      modified: 1770917573876
+      isPrivate: false
+      description: ""
+      sortKey: -1770623349032.625
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"date" : "15/02/2026",
+        	"shift" : "MORNING",
+        	"present" : true
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Imx1Y2FzIiwiZXhwIjoxNzcwOTIzMDk3fQ.BQ9wIbTi1799bLIXkCfPzTUC2DXr6CAEklLZTwHI_nA
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/attendance?start=15/02/2026&shift=MORNING
+    name: "[ATTENDANCE] - Consultar presenças (domingo especifico)"
+    meta:
+      id: req_6094f2a2db91415ba09c2b15d9b16287
+      created: 1770916046234
+      modified: 1770931843989
+      isPrivate: false
+      description: ""
+      sortKey: -1770612025190.8125
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/63c34761-a41e-48c0-a1de-f1f2b36a784b/attendance
+    name: "[ATTENDANCE] - Atualizar presença da Criança"
+    meta:
+      id: req_0063926f48fd4447ac7f5b88f0dd2c17
+      created: 1770916448667
+      modified: 1770917530436
+      isPrivate: false
+      description: ""
+      sortKey: -1770617687111.7188
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"date" : "15/02/2026",
+        	"shift" : "MORNING",
+        	"present" : false
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkyMzcwM30.8qx1SFFjJ716QxzSK0vrLA3mUV0IGiR5BTUC5o7qonw
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/attendance?start=15/02/2026&end=22/02/2026&shift=MORNING
+    name: "[ATTENDANCE] - Consultar presenças (período)"
+    meta:
+      id: req_2409929995434f21aa8aa7f106acd4a6
+      created: 1770917702737
+      modified: 1770931849175
+      isPrivate: false
+      description: ""
+      sortKey: -1770606363269.9062
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/3c22239d-32bc-46da-a481-73cebc1d1eb9/attendance?start=15/02/2026&end=22/02/2026
+    name: "[ATTENDANCE] - Relatório por criança (periódo)"
+    meta:
+      id: req_350366f6c5204d2d8debd3d49d747bc2
+      created: 1770917820388
+      modified: 1770931853787
+      isPrivate: false
+      description: ""
+      sortKey: -1770603532309.4531
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/children/3c22239d-32bc-46da-a481-73cebc1d1eb9/attendance?start=15/02/2026&end=22/02/2026&shift=MORNING
+    name: "[ATTENDANCE] - Relatório por criança (periódo + turno)"
+    meta:
+      id: req_b3f4ebad320b479c8c7858050889250b
+      created: 1770917901990
+      modified: 1770931860065
+      isPrivate: false
+      description: ""
+      sortKey: -1770602116829.2266
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/sundays/report?start=15/02/2026&end=22/02/2026&shift=MORNING
+    name: "[REPORT SUNDAY] - Relatorio unificado"
+    meta:
+      id: req_abbbb2b8203646d197a14b275e105e38
+      created: 1770917997861
+      modified: 1770931909443
+      isPrivate: false
+      description: ""
+      sortKey: -1770795237039.125
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/sundays/calendar?month=02/2026
+    name: "[REPORT SUNDAY] - Relatorio p/ mês"
+    meta:
+      id: req_e27cb3c0a15c46ea81cf6d19c1703723
+      created: 1770922002054
+      modified: 1770931901585
+      isPrivate: false
+      description: ""
+      sortKey: -1770789996242.5625
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDkzOTAzM30.RBVumCpRbr2pNhUgsfncXBJHpbdTBTR7WR23Y1gioQY
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/auth/me
+    name: Me
+    meta:
+      id: req_e9a293db0ba9434a94f1c934ffb868bd
+      created: 1770937289427
+      modified: 1770937335350
+      isPrivate: false
+      description: ""
+      sortKey: -1770384399627.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYWZhbGV0YSIsImV4cCI6MTc3MDk0NDUxNn0.metiX9vnsk7kW3UVyuHj8Y-ypSF9VwgEz_LBzjPJ85c
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_646ffca089d64f470d239c5cd55e5bcd6e2360ee
+    created: 1770600698717
+    modified: 1770600698717
+environments:
+  name: Base Environment
+  meta:
+    id: env_646ffca089d64f470d239c5cd55e5bcd6e2360ee
+    created: 1770600698707
+    modified: 1770600698707
+    isPrivate: false
